@@ -1,5 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
+import 'package:hybrid4/hybrid4.dart';
 
 void main(List<String> arguments) async {
   try {
@@ -18,24 +19,5 @@ void main(List<String> arguments) async {
     }
   } catch (e) {
     print('Error occurred: $e');
-  }
-}
-
-class User {
-  final int id;
-  final String firstName;
-  final String lastName;
-
-  User({required this.id, required this.firstName, required this.lastName});
-
-  factory User.fromJson(Map<String, dynamic> json) {
-    return User(
-        id: json["id"] ?? -1,
-        firstName: json["first_name"] ?? 'Unknown',
-        lastName: json["last_name"] ?? 'Unknown');
-  }
-
-  void output() {
-    print('ID: $id, First Name: $firstName, Last Name: $lastName');
   }
 }
